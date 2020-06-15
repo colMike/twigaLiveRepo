@@ -114,11 +114,11 @@ public class DailyInspection {
     private Date inspectionDate;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "driver_id")
     private Driver driver;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "truck_id")
     private Truck truck;
 }

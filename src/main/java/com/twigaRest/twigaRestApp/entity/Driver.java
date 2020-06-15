@@ -60,6 +60,12 @@ public class Driver {
     @OneToMany(mappedBy = "driver")
     private List<DailyInspection> dailyInspections;
 
+    @OneToMany(mappedBy = "driver")
+    private List<Accident> accidents;
+
+    @OneToMany(mappedBy = "driver")
+    private List<Servicing> servicings;
+
 
 //    public Driver() {
 //

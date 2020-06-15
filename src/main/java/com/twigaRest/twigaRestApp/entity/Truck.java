@@ -44,6 +44,12 @@ public class Truck {
     @OneToMany(mappedBy = "truck")
     private List<DailyInspection> dailyInspections;
 
+    @OneToMany(mappedBy = "truck")
+    private List<Accident> accidents;
+
+    @OneToMany(mappedBy = "truck")
+    private List<Servicing> servicings;
+
 }
 
 
