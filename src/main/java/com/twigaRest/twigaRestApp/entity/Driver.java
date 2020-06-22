@@ -22,6 +22,12 @@ public class Driver {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
+    @Column(name = "other")
+    private String other;
+
     @Column(name = "travel_status")
     private int travelStatus;
 
@@ -34,15 +40,9 @@ public class Driver {
     @Column(name = "distance_efficiency", insertable = false, updatable = false)
     private Integer distanceEfficiency;
 
-
-
     @Column(name = "time_efficiency", insertable = false, updatable = false)
 //    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
     private Integer timeEfficiency;
-
-
-    @Column(name = "phone_number")
-    private String phoneNumber;
 
 //    @OneToOne
 //    @JoinColumn(name = "truck_id")

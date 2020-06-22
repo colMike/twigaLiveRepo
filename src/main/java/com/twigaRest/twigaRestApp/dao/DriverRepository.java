@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin("*")
 public interface DriverRepository extends JpaRepository<Driver, Integer> {
 
-    @Query(value = "SELECT distinct d.phoneNumber, d.firstName, d.lastName, d.id FROM Driver d", nativeQuery = false)
-//    @Query(value = "SELECT DISTINCT id, model, reg_number,travel_status FROM Truck WHERE reg_number='KBE 739V'", nativeQuery = true)
+//    @Query(value = "SELECT distinct d.phoneNumber, d.firstName, d.lastName, d.id FROM Driver d", nativeQuery = false)
+    @Query(value = "SELECT DISTINCT phone_number, first_name, last_name, id, distance_efficiency, time_efficiency, distance_travelled, time_taken FROM Driver", nativeQuery = true)
+
+
     public String[] getAllDrivers();
 
 }
