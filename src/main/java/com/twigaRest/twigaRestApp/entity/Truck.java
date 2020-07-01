@@ -22,8 +22,8 @@ public class Truck {
     @Column(name = "model")
     private String model;
 
-    @Column(name = "travel_status")
-    private int travelStatus;
+    @Column(name = "travel_status", insertable = false, updatable = false)
+    private Integer travelStatus;
 
 //    @OneToOne(mappedBy = "truck")
 //    private Driver driver;

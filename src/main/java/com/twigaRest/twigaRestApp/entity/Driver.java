@@ -28,8 +28,8 @@ public class Driver {
     @Column(name = "other")
     private String other;
 
-    @Column(name = "travel_status")
-    private int travelStatus;
+    @Column(name = "travel_status", insertable = false, updatable = false)
+    private Integer travelStatus;
 
     @Column(name = "distance_travelled", insertable = false, updatable = false)
     private Integer distanceTravelled;
