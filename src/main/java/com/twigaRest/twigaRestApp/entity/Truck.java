@@ -22,6 +22,14 @@ public class Truck {
     @Column(name = "model")
     private String model;
 
+    @Column(name = "chassis_number")
+    private String chassisNumber;
+
+    @Column(name = "capacity")
+    private int capacity;
+
+    
+
     @Column(name = "travel_status", insertable = false, updatable = false)
     private Integer travelStatus;
 

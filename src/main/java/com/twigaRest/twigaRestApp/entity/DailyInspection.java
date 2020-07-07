@@ -113,6 +113,9 @@ public class DailyInspection {
     @Column(name = "inspection_date")
     private Date inspectionDate;
 
+    @Column(name = "service_due_date")
+    private Date serviceDueDate;
+
 
     @ManyToOne()
     @JoinColumn(name = "driver_id")
