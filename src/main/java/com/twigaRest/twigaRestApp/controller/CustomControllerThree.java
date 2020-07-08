@@ -25,6 +25,14 @@ public class CustomControllerThree {
         return assignmentRepository.getAllAssignments();
 
     }
+
+    @GetMapping("/getAssignmentDetails")
+    public String[] getAssignmentDetails() {
+
+        System.out.println();
+        return assignmentRepository.getAllAssignmentDetails();
+
+    }
 }
 //    @GetMapping("/getTruckById")
 //    public List<Truck> getTruckById(@PathVariable String regNo){

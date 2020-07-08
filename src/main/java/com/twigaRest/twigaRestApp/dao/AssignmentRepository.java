@@ -17,5 +17,6 @@ public interface AssignmentRepository extends JpaRepository<Assignment, Integer>
     @Query(value = "SELECT DISTINCT id, odometer_start, driver_id FROM Assignment WHERE trip_status='1'", nativeQuery = true)
     public String[] getAllAssignments();
 
-
+    @Query(value = "SELECT DISTINCT a.id, d.first_name, d.last_name, t.reg_number, a.trip_start, a.trip_end, a.odometer_start, a.odometer_end, a.starting_point, a.end_point FROM assignment a JOIN driver d on a.driver_id = d.id JOIN truck t on a.truck_id = t.id", nativeQuery = true)
+    public String[] getAllAssignmentDetails();
 }
