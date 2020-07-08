@@ -24,7 +24,7 @@ public class CustomControllerSeven {
 
         System.out.println(emailContent);
 
-        Email to = new Email("michaelngigi76@gmail.com");
+        Email to = new Email("logistics@twiga.com");
         String subject = emailContent.getEmailName();
         Email from = new Email("kaizalaproject@twiga.com");
         Content content = new Content("text/csv" , emailContent.getCsvContent());
