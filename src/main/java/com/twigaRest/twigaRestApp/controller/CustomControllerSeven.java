@@ -24,13 +24,24 @@ public class CustomControllerSeven {
 
         System.out.println(emailContent);
 
-        Email to = new Email("michael.mbugua@m2m.co.ke");
+        Email to = new Email("logistics@twiga.com");
         String subject = emailContent.getEmailName();
         Email from = new Email("kaizalaproject@twiga.com");
-        Content content = new Content("text/csv" , emailContent.getCsvContent());
+        Attachments attachment = new Attachments();
+//        Content content = new Content("text/csv" , emailContent.getCsvContent());
+        Content content = new Content("text/plain" , "Attached is the following report: " + emailContent.getEmailName());
+//        System.out.println(emailContent.getCsvContent());
         Mail mail = new Mail(from, subject, to, content);
 
-        SendGrid sg = new SendGrid("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");
+        attachment.setContent(emailContent.getCsvContent());
+        attachment.setFilename(emailContent.getEmailName());
+        attachment.setType("text/csv");
+
+
+        mail.addAttachments(attachment);
+
+
+        SendGrid sg = new SendGrid("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");
         Request request = new Request();
         try {
             request.setMethod(Method.POST);
