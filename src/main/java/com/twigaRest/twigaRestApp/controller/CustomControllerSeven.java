@@ -26,7 +26,7 @@ public class CustomControllerSeven {
 
         Email to = new Email("logistics@twiga.com");
         String subject = emailContent.getEmailName();
-        Email from = new Email("kaizalaproject@twiga.com");
+        Email from = new Email("logistics@twiga.com");
         Attachments attachment = new Attachments();
 //        Content content = new Content("text/csv" , emailContent.getCsvContent());
         Content content = new Content("text/plain" , "Attached is the following report: " + emailContent.getEmailName());
