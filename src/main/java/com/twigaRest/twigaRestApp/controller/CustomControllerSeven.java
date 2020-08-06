@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import com.sendgrid.*;
 
 import java.io.IOException;
+import java.util.Base64;
 
 @RestController
 @CrossOrigin("*")
@@ -24,16 +25,19 @@ public class CustomControllerSeven {
 
         System.out.println(emailContent);
 
-        Email to = new Email("logistics@twiga.com");
+        Email to = new Email("kaizalaproject@twiga.com");
         String subject = emailContent.getEmailName();
         Email from = new Email("logistics@twiga.com");
         Attachments attachment = new Attachments();
 //        Content content = new Content("text/csv" , emailContent.getCsvContent());
         Content content = new Content("text/plain" , "Attached is the following report: " + emailContent.getEmailName());
-//        System.out.println(emailContent.getCsvContent());
+
+        System.out.println(emailContent.getCsvContent());
+        System.out.println(convertFileToBase64(emailContent.getCsvContent().getBytes()));
+
         Mail mail = new Mail(from, subject, to, content);
 
-        attachment.setContent(emailContent.getCsvContent());
+        attachment.setContent(convertFileToBase64(emailContent.getCsvContent().getBytes()));
         attachment.setFilename(emailContent.getEmailName());
         attachment.setType("text/csv");
 
@@ -41,7 +45,7 @@ public class CustomControllerSeven {
         mail.addAttachments(attachment);
 
 
-        SendGrid sg = new SendGrid("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");
+        SendGrid sg = new SendGrid("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");
         Request request = new Request();
         try {
             request.setMethod(Method.POST);
@@ -60,6 +64,10 @@ public class CustomControllerSeven {
         }
 
 
+    }
+
+    private String convertFileToBase64(byte[] input) {
+        return Base64.getEncoder().encodeToString(input);
     }
 }
 
