@@ -25,7 +25,7 @@ public class CustomControllerSeven {
 
         System.out.println(emailContent);
 
-        Email to = new Email("kaizalaproject@twiga.com");
+        Email to = new Email("logistics@twiga.com");
         String subject = emailContent.getEmailName();
         Email from = new Email("logistics@twiga.com");
         Attachments attachment = new Attachments();
@@ -45,7 +45,8 @@ public class CustomControllerSeven {
         mail.addAttachments(attachment);
 
 
-        SendGrid sg = new SendGrid("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");
+        SendGrid sg = new SendGrid("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");
+
         Request request = new Request();
         try {
             request.setMethod(Method.POST);
