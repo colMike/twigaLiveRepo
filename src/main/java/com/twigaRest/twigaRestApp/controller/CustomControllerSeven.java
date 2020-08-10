@@ -38,7 +38,7 @@ public class CustomControllerSeven {
         Mail mail = new Mail(from, subject, to, content);
 
         attachment.setContent(convertFileToBase64(emailContent.getCsvContent().getBytes()));
-        attachment.setFilename(emailContent.getEmailName());
+        attachment.setFilename("Report.xlsx");
         attachment.setType("text/csv");
 
 
