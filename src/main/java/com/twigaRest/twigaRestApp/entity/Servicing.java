@@ -29,6 +29,12 @@ public class Servicing {
     @Column(name = "servicing_date")
     private Date servicingDate;
 
+    @Column(name = "odometer_reading")
+    private double odometerReading;
+
+    @Column(name = "service_due_date")
+    private Date servicingDueDate;
+
 
     @ManyToOne()
     @JoinColumn(name = "driver_id")

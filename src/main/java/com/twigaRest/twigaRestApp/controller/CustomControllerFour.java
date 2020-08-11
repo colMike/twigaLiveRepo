@@ -2,10 +2,12 @@ package com.twigaRest.twigaRestApp.controller;
 
 import com.twigaRest.twigaRestApp.dao.AssignmentRepository;
 import com.twigaRest.twigaRestApp.dao.FuelRepository;
+import com.twigaRest.twigaRestApp.entity.Fuel;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @CrossOrigin("*")
@@ -26,6 +28,15 @@ public class CustomControllerFour {
         return fuelRepository.getAllFuelDetails();
 
     }
+
+
+//    @PostMapping("/addNewFuel")
+//    public ResponseEntity<Fuel> addNewFuel(
+//            @RequestBody Map<String, Object> fuelMap
+//    ) {
+//        return fuelRepository.addNewFuel();
+//    }
+
 }
 //    @GetMapping("/getTruckById")
 //    public List<Truck> getTruckById(@PathVariable String regNo){
